@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["33YWA7499D.app.annie.mochi"],
+        "appID": "33YWA7499D.app.annie.mochi",
+        "paths": ["/j", "/j/", "/j/*"],
+        "components": [
+          { "/": "/j" },
+          { "/": "/j/" },
+          { "/": "/j/*" }
+        ]
+      }
+    ]
+  }
+}

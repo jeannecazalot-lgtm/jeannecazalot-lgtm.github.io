@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rejoins ton foyer sur mochi</title>
+<meta property="og:title" content="Rejoins ton foyer sur mochi 🍡">
+<meta property="og:description" content="On se partage la charge du foyer, à deux.">
+<style>
+  :root { --bg:#F6F2EC; --card:#FFFFFF; --ink:#23201C; --muted:#8A8378; --coral:#E8684A; --hair:#E7E0D6; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+         min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .card { background:var(--card); border:1px solid var(--hair); border-radius:26px; padding:36px 28px 30px;
+          max-width:380px; width:100%; text-align:center; box-shadow:0 14px 40px rgba(35,32,28,.08); }
+  .mochi { font-size:44px; line-height:1; }
+  h1 { font-size:21px; font-weight:600; letter-spacing:-.4px; margin-top:14px; }
+  .sub { font-size:14.5px; color:var(--muted); margin-top:6px; line-height:1.45; }
+  .code { margin:22px auto 0; display:inline-block; background:var(--bg); border:1px solid var(--hair);
+          border-radius:14px; padding:12px 26px; font-size:28px; font-weight:700; letter-spacing:7px;
+          font-variant-numeric:tabular-nums; }
+  .btn { display:block; margin-top:22px; background:var(--ink); color:#fff; text-decoration:none;
+         border-radius:16px; padding:16px; font-size:16px; font-weight:600; }
+  .steps { text-align:left; margin-top:22px; border-top:1px solid var(--hair); padding-top:18px; }
+  .steps p { font-size:13.5px; color:var(--muted); line-height:1.5; margin-top:8px; }
+  .steps b { color:var(--ink); font-weight:600; }
+  .foot { font-size:12px; color:var(--muted); margin-top:22px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="mochi">🍡</div>
+  <h1>On t'invite sur mochi</h1>
+  <p class="sub">L'app qui répartit la charge du foyer, à deux.</p>
+  <div class="code" id="code">······</div>
+  <a class="btn" id="open" href="#">Ouvrir dans mochi</a>
+  <div class="steps">
+    <p><b>Tu as mochi ?</b> Touche le bouton ci-dessus : l'app s'ouvre avec le code déjà rempli.</p>
+    <p><b>Pas encore l'app ?</b> Installe mochi (invitation TestFlight), puis choisis « J'ai reçu un code » et tape le code ci-dessus.</p>
+  </div>
+  <p class="foot">mochi · la charge mentale, enfin partagée</p>
+</div>
+<script>
+  // le code arrive en ?code=XXXXXX (ou /j/XXXXXX via la page 404 qui redirige ici)
+  var code = (new URLSearchParams(location.search).get('code') || '').toUpperCase().replace(/[^A-Z2-9]/g, '').slice(0, 6);
+  if (code) {
+    document.getElementById('code').textContent = code;
+    var app = 'mochi://rejoindre?code=' + code;
+    var btn = document.getElementById('open');
+    btn.href = app;
+    // si mochi est installée, iOS ouvre l'app directement via le lien universel —
+    // cette page n'est vue que sans l'app (ou tant qu'Apple n'a pas rafraîchi le domaine).
+  } else {
+    document.getElementById('code').textContent = '—';
+    document.getElementById('open').style.display = 'none';
+  }
+</script>
+</body>
+</html>
