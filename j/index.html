@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rejoins ton foyer sur mochi</title>
-<meta property="og:title" content="Rejoins ton foyer sur mochi 🍡">
+<title>Rejoins ton foyer sur Mindpair</title>
+<meta property="og:title" content="Rejoins ton foyer sur Mindpair">
 <meta property="og:description" content="On se partage la charge du foyer, à deux.">
 <style>
   :root { --bg:#F6F2EC; --card:#FFFFFF; --ink:#23201C; --muted:#8A8378; --coral:#E8684A; --hair:#E7E0D6; }
@@ -30,15 +30,15 @@
 <body>
 <div class="card">
   <div class="mochi">🍡</div>
-  <h1>On t'invite sur mochi</h1>
+  <h1>On t'invite sur Mindpair</h1>
   <p class="sub">L'app qui répartit la charge du foyer, à deux.</p>
   <div class="code" id="code">······</div>
-  <a class="btn" id="open" href="#">Ouvrir dans mochi</a>
+  <a class="btn" id="open" href="#">Ouvrir dans Mindpair</a>
   <div class="steps">
-    <p><b>Tu as mochi ?</b> Touche le bouton ci-dessus : l'app s'ouvre avec le code déjà rempli.</p>
-    <p><b>Pas encore l'app ?</b> Installe mochi (invitation TestFlight), puis choisis « J'ai reçu un code » et tape le code ci-dessus.</p>
+    <p><b>Tu as Mindpair ?</b> Touche le bouton ci-dessus : l'app s'ouvre avec le code déjà rempli.</p>
+    <p><b>Pas encore l'app ?</b> Installe Mindpair (invitation TestFlight), puis choisis « J'ai reçu un code » et tape le code ci-dessus.</p>
   </div>
-  <p class="foot">mochi · la charge mentale, enfin partagée</p>
+  <p class="foot">Mindpair · la charge mentale, enfin partagée</p>
 </div>
 <script>
   // le code arrive en ?code=XXXXXX (ou /j/XXXXXX via la page 404 qui redirige ici)
@@ -48,7 +48,7 @@
     var app = 'mochi://rejoindre?code=' + code;
     var btn = document.getElementById('open');
     btn.href = app;
-    // si mochi est installée, iOS ouvre l'app directement via le lien universel —
+    // si Mindpair est installée, iOS ouvre l'app directement via le lien universel —
     // cette page n'est vue que sans l'app (ou tant qu'Apple n'a pas rafraîchi le domaine).
   } else {
     document.getElementById('code').textContent = '—';
